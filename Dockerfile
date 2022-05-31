@@ -8,7 +8,7 @@ ARG FIO_VERSION="3.30-r0"
 RUN apk --no-cache add fio=$FIO_VERSION
 
 ENV DBENCH_MOUNTPOINT="/data" \
-    FIO_SIZE="2G"
+    FIO_SIZE="2G" \
     FIO_OFFSET_INCREMENT="500M" \
     FIO_DIRECT="1" \
     FIO_RAMP_TIME="2s" \
