@@ -52,7 +52,7 @@ READ_LATENCY_VAL=$(echo "$READ_LATENCY"|grep ' lat.*avg'|grep -Eoi 'avg=[0-9.]+'
 echo
 echo
 echo Testing Write Latency...
-WRITE_LATENCY=$(fio --randrepeat=0 --verify=0 --ioengine=$FIO_IOENGINE --direct=$FIO_DIRECT --name=write_latency --filename=$DBENCH_MOUNTPOINT/fiotest --bs=$FIO_LATENCY_BS --iodepth=FIO_LATENCY_IODEPTH --size=$FIO_SIZE --readwrite=randwrite --time_based --ramp_time=$FIO_RAMP_TIME --runtime=$FIO_RUNTIME)
+WRITE_LATENCY=$(fio --randrepeat=0 --verify=0 --ioengine=$FIO_IOENGINE --direct=$FIO_DIRECT --name=write_latency --filename=$DBENCH_MOUNTPOINT/fiotest --bs=$FIO_LATENCY_BS --iodepth=$FIO_LATENCY_IODEPTH --size=$FIO_SIZE --readwrite=randwrite --time_based --ramp_time=$FIO_RAMP_TIME --runtime=$FIO_RUNTIME)
 echo "$WRITE_LATENCY"
 WRITE_LATENCY_VAL=$(echo "$WRITE_LATENCY"|grep ' lat.*avg'|grep -Eoi 'avg=[0-9.]+'|cut -d'=' -f2)
 echo
