@@ -3,7 +3,7 @@ ARG ALPINE_VERSION=3.16.0
 
 FROM alpine:$ALPINE_VERSION
 
-RUN apk --no-cache add fio=$FIO_VERSION
+RUN apk --no-cache add fio==$FIO_VERSION
 
 ENV DBENCH_MOUNTPOINT="/data"
 ENV FIO_SIZE="2G"
